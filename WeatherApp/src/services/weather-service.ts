@@ -1,14 +1,27 @@
-import { Weather } from "../models/weather";
-import { defaultLocation, authedWeatherUrl } from "../enums/api-enums";
-
-class WeatherService {
-    
-} 
+import { CurrentWeather, Location, Weather } from "../models/weather";
+import { DEFAULT_LOCATION, AUTHED_WEATHER_API_URL } from "../enums/api-enums";
 
 export async function getDefaultWeatherData(location? : string) : Promise<Weather> {
-    console.log("got here");
-    const res = await fetch(`${authedWeatherUrl}${location || defaultLocation}`);
+    const res = await fetch(`${AUTHED_WEATHER_API_URL}${location || DEFAULT_LOCATION}`);
     const data = await res.json();
-    console.log(data);
-    return data;
+    const currentData = data.current;
+    const rawLocationData = data.location;
+   
+    const locationData: Location = {
+        country: rawLocationData.country,
+        province: rawLocationData.region,
+        city: rawLocationData.name,
+    }
+
+    const currentWeatherData: CurrentWeather = {
+        temperature: currentData.temperature,
+        type: currentData.weather_descriptions[0],
+        weatherIcon: currentData.weather_icons[0],
+        windSpeed: currentData.wind_speed,
+        precipitation: currentData.precip,
+        pressure: currentData.pressure,
+    }
+
+    return new Weather(locationData, currentWeatherData);
+    
 }
