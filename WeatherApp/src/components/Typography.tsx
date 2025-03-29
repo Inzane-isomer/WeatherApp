@@ -7,26 +7,33 @@ interface TypographyProps {
     textSize?: number,
     textColor?: string,
     children: ReactNode,
+    textAlign?: string,
+    marginTop?: string,
+    marginBottom?: string,
+    marginLeft?: string,
+    marginRight?: string,
 }
 
-const StyledH2 = styled.h2<{$textColor?: string; $textSize?: number;}>`
+const StyledH1 = styled.h1<{$textColor?: string; $textSize?: number;}>`
     color: ${props => props.$textColor ? props.$textColor : {PRIMARY_TEXT_COLOR}};
-    font-size: ${props => props.$textSize ? props.$textSize : 15}px;
     text-align: center;
 `;
 
-const StyledP = styled.p<{$textColor?: string; $textSize?: number; bold?: boolean}>`
+const StyledP = styled.p<{$textColor?: string; $textSize?: number; $bold?: boolean, $textAlign?: string,  marginTop?: string,
+    marginBottom?: string,
+    marginLeft?: string,
+    marginRight?: string,}>`
     color: ${props => props.$textColor ? props.$textColor : {PRIMARY_TEXT_COLOR}};
     font-size: ${props => props.$textSize ? props.$textSize : 15}px;
     bold: true;
-    text-align: left;
+    text-align: ${props => props.$textAlign};  
 `;
 
 export function TypographyHeader({textSize, textColor, children} :TypographyProps) {
     return (
-        <StyledH2 $textSize={textSize} $textColor={textColor}>
+        <StyledH1 $textSize={textSize} $textColor={textColor}>
             {children || <Skeleton />}
-        </StyledH2>
+        </StyledH1>
     )
 }
 
