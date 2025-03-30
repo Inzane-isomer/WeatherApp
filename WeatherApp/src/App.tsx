@@ -1,11 +1,10 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { getDefaultWeatherData } from './services/weather-service'
-import Card from './components/Card'
 import { Weather } from './models/weather'
 import { ErrorResponse } from './models/error-response'
+import { BORDER_COLOR, PRIMARY_BG_COLOR, SECONDARY_BG_COLOR } from './enums/colors'
+import styled from 'styled-components'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,30 +19,32 @@ function App() {
     return setErrorRes(res);
   }
 
+  const StyledOuterCard = styled.div`
+  display: flex;
+    background-color: ${SECONDARY_BG_COLOR};
+    width:750px;
+    height:500px;
+    justify-content: center;
+`;
+
+const StyledInnerCard = styled.div`
+  width: 700px;
+  height: 450px;
+  background-color: ${PRIMARY_BG_COLOR};
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 10px;
+  border-color: ${BORDER_COLOR};
+  align-self: center;
+`;
+
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={handleClick}>
-          count is {count}
-        </button>
-        {weatherRes ? <Card count={count} content={weatherRes.currentWeather.type}/> : <></>}
-        {errorRes ? <Card count={count} content={errorRes.friendlyMessage}/> : <></>}
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <StyledOuterCard>
+      <StyledInnerCard>
+      
+      </StyledInnerCard>
+    </StyledOuterCard>
     </>
   )
 }
