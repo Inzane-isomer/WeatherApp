@@ -2,11 +2,15 @@ export class Weather {
     location: Location;
     currentWeather: CurrentWeather;
     requestTime: Date;
+    historicalWeather?: CurrentWeather[];
+    forecastWeather?: CurrentWeather[];
 
-    constructor(location: Location, currentWeather: CurrentWeather) {
+    constructor(location: Location, currentWeather: CurrentWeather, historicalWeather?: CurrentWeather[], forecastWeather?: CurrentWeather[],) {
         this.location = location,
         this.currentWeather = currentWeather,
-        this.requestTime = new Date();
+        this.requestTime = new Date(),
+        this.historicalWeather = historicalWeather;
+        this.forecastWeather = forecastWeather;
     }
 }
 

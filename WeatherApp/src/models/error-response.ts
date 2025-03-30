@@ -1,4 +1,4 @@
-import { MESSAGE_101, MESSAGE_601, MESSAGE_GENERAL } from "../enums/error-messages"
+import { MESSAGE_101, MESSAGE_601, MESSAGE_603, MESSAGE_GENERAL } from "../enums/error-messages"
 
 export class ErrorResponse {
     code: number;
@@ -18,6 +18,9 @@ export class ErrorResponse {
             break;
             case 601 :
                 return MESSAGE_601;
+            break;
+            case 603 :
+                return MESSAGE_603;
             break;
             default:
                 return MESSAGE_GENERAL;
