@@ -11,7 +11,7 @@ const FlexDiv = styled.div`
     display: inline-flex;
     flex-flow: column;
     justify-content: center;
-    
+    margin-left: 15%
 `;
 
 

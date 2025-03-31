@@ -1,9 +1,9 @@
-import Skeleton from "react-loading-skeleton"
 import { TypographyParagraph } from "./Typography"
 import styled from "styled-components";
 // @ts-ignore
 import ReactAnimatedWeather from "react-animated-weather";
 import { CurrentWeather } from "../models/weather";
+import { WHITE } from "../enums/colors";
 
 interface IconButtonProps {
     loading?: boolean,
@@ -13,6 +13,7 @@ interface IconButtonProps {
     subtitle?: string,
     handleEvent: any,
     weather?: CurrentWeather,
+    disabled?: boolean,
 }
 
 const FlexDiv = styled.div`
@@ -26,7 +27,7 @@ const StyledButton = styled.button`
     background-color: transparent;
 `;
 
-export default function IconButton({iconUrl, iconColor, title, subtitle, handleEvent, loading, weather} : IconButtonProps) {
+export default function IconButton({iconUrl, iconColor, title, subtitle, handleEvent, loading, weather, disabled} : IconButtonProps) {
     const iconDefaults = {
         icon: iconUrl, 
         color: iconColor,
@@ -36,12 +37,12 @@ export default function IconButton({iconUrl, iconColor, title, subtitle, handleE
     
     return (
         <FlexDiv >
-            <StyledButton onClick={() => handleEvent(weather)}>
-                <TypographyParagraph textAlign="center" >
+            <StyledButton disabled={disabled} onClick={() => handleEvent(weather)}>
+                <TypographyParagraph textAlign="center" textColor={WHITE} >
                     {title}
                 </TypographyParagraph>
                 <ReactAnimatedWeather icon={iconDefaults.icon} color={iconDefaults.color} size={iconDefaults.size} animate={iconDefaults.animate}/>
-                <TypographyParagraph textAlign="center">
+                <TypographyParagraph textAlign="center" textColor={WHITE}>
                     {subtitle}
                 </TypographyParagraph>
             </StyledButton>  

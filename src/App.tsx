@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-import './App.css'
-import { getDefaultWeatherData, getForecastWeatherData, getHistoricalWeatherData } from './services/weather-service'
+import { getForecastWeatherData, getHistoricalWeatherData } from './services/weather-service'
 import { CurrentWeather, Location, Weather } from './models/weather'
 import { ErrorResponse } from './models/error-response'
 import { BORDER_COLOR, PRIMARY_BG_COLOR, RED, SECONDARY_BG_COLOR } from './enums/colors'
@@ -8,7 +7,6 @@ import { TypographyParagraph } from './components/Typography'
 import UpperCardArea from './components/UpperCardArea'
 import styled from 'styled-components'
 import LowerCardArea from './components/LowerCardArea'
-import Skeleton from 'react-loading-skeleton'
 
 
   const StyledOuterCard = styled.div`
@@ -105,7 +103,7 @@ export default function App() {
           <UpperCardArea error={errorMessage!} handleEvent={handleClick} weather={selectedWeather} loading={loading}/>
         </StyledUpperCardArea>
         <StyledLowerCardArea>
-          <LowerCardArea  weeklyWeather={weeklyWeather!} handleEvent={handleClick} loading={false} />
+          <LowerCardArea  weeklyWeather={weeklyWeather!} handleEvent={handleClick} loading={loading} />
         </StyledLowerCardArea>
       </StyledInnerCard>
     </StyledOuterCard>
