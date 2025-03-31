@@ -27,8 +27,8 @@ export const HISTORICAL_RES = {
         "visibility": 16
     },
     "historical": {
-        "2025-03-27": {
-            "date": (new Date().getDate()-3).toLocaleString(),
+        "2025-03-28": {
+            "date": "2025-03-28",
             "date_epoch": 1214870400,
             "astro": {
                 "sunrise": "05:29 AM",
@@ -77,8 +77,8 @@ export const HISTORICAL_RES = {
             "chanceofsnow": 0,
             "chanceofthunder": 0,
         },
-        "2025-03-28": {
-            "date": (new Date().getDate()-2).toLocaleString(),
+        "2025-03-29": {
+            "date": "2025-03-29",
             "date_epoch": 1214870400,
             "astro": {
                 "sunrise": "05:29 AM",
@@ -104,7 +104,7 @@ export const HISTORICAL_RES = {
                         "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png"
                     ],
                     "weather_descriptions": [
-                        "Sunny"
+                        "Fog"
                     ],
                     "precip": 1.8,
                     "humidity": 80,
@@ -127,8 +127,8 @@ export const HISTORICAL_RES = {
                     "chanceofsnow": 0,
                     "chanceofthunder": 0,
         },
-        "2025-03-29": {
-            "date": (new Date().getDate()-1).toLocaleString(),
+        "2025-03-30": {
+            "date": "2025-03-30",
             "date_epoch": 1214870400,
             "astro": {
                 "sunrise": "05:29 AM",
@@ -154,7 +154,7 @@ export const HISTORICAL_RES = {
                         "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png"
                     ],
                     "weather_descriptions": [
-                        "Sunny"
+                        "Partly Cloudy"
                     ],
                     "precip": 0,
                     "humidity": 80,
@@ -189,7 +189,7 @@ export const FORECAST_RES = {
     },
     "current": {
         "observation_time": new Date().toTimeString(),
-        "temperature": 18,
+        "temperature": 15,
         "weather_code": 113,
         "weather_icons": [
             "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png"
@@ -220,7 +220,7 @@ export const FORECAST_RES = {
     },
     "forecast": {
         "2025-04-01": {
-            "date": (new Date().getDate()+1).toLocaleString(),
+            "date": "2025-04-01",
             "date_epoch": 1567814400,
             "astro": {
                 "sunrise": "06:28 AM",
@@ -256,9 +256,9 @@ export const FORECAST_RES = {
                 "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0004_black_low_cloud.png"
             ],
             "weather_descriptions": [
-                "Overcast"
+                "Rainy"
             ],
-            "precip": 0,
+            "precip": 100,
             "humidity": 68,
             "visibility": 10,
             "pressure": 1008,
@@ -280,7 +280,7 @@ export const FORECAST_RES = {
             "chanceofthunder": 0,
         },
         "2025-04-02": {
-            "date": (new Date().getDate()+2).toLocaleString(),
+            "date": "2025-04-02",
             "date_epoch": 1567814400,
             "astro": {
                 "sunrise": "06:28 AM",
@@ -340,7 +340,7 @@ export const FORECAST_RES = {
             "chanceofthunder": 0,
         },
         "2025-04-03": {
-            "date": (new Date().getDate()+3).toLocaleString(),
+            "date": "2025-04-03",
             "date_epoch": 1567814400,
             "astro": {
                 "sunrise": "06:28 AM",
@@ -376,7 +376,7 @@ export const FORECAST_RES = {
                 "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0004_black_low_cloud.png"
             ],
             "weather_descriptions": [
-                "Overcast"
+                "Windy"
             ],
             "precip": 20,
             "humidity": 68,
