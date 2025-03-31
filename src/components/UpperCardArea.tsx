@@ -36,7 +36,7 @@ export default function UpperCardArea({handleEvent, weather, error, loading} : U
         ?  <MutatingDots height="100" width="100" radius="10" color={WHITE} visible={loading}/> 
         :   <>
                 <FlexDiv>
-                    <IconButton iconColor={weather?.iconColor} title={weather?.day} subtitle={weather?.type} handleEvent={handleEvent} iconUrl={weather?.weatherIcon}></IconButton>
+                    <IconButton disabled={true} iconColor={weather?.iconColor} title={weather?.day} subtitle={weather?.type} handleEvent={handleEvent} iconUrl={weather?.weatherIcon}></IconButton>
                 </FlexDiv>
                 <FlexDiv>
                     <TypographyHeader>{loading || error ? "": `${weather?.temperature}°c`}</TypographyHeader>
