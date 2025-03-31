@@ -36,7 +36,6 @@ export default function IconButton({iconUrl, iconColor, title, subtitle, handleE
     
     return (
         <FlexDiv >
-            <StyledButton onClick={() => handleEvent}>
             <StyledButton onClick={() => handleEvent(weather)}>
                 <TypographyParagraph textAlign="center" >
                     {title}
@@ -45,7 +44,7 @@ export default function IconButton({iconUrl, iconColor, title, subtitle, handleE
                 <TypographyParagraph textAlign="center">
                     {subtitle}
                 </TypographyParagraph>
-            </StyledButton> } 
+            </StyledButton>  
         </FlexDiv>
     )
 }
