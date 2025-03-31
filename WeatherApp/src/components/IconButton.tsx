@@ -1,4 +1,3 @@
-import Skeleton from "react-loading-skeleton"
 import { TypographyParagraph } from "./Typography"
 import styled from "styled-components";
 // @ts-ignore

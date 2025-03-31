@@ -3,6 +3,8 @@ import DetailsCard from "./DetailsCard";
 import IconButton from "./IconButton";
 import { TypographyHeader } from "./Typography";
 import { CurrentWeather } from "../models/weather";
+import { DNA, Grid, MutatingDots } from "react-loader-spinner";
+import { WHITE } from "../enums/colors";
 
 interface UpperCardAreaProps {
     weather?: CurrentWeather, 
@@ -21,6 +23,7 @@ display: flex;
 
 const FlexDiv = styled.div`
     flex: 1;
+      flex-wrap: wrap;
 `;
 
 export default function UpperCardArea({handleEvent, weather, error, loading} : UpperCardAreaProps) {
@@ -29,15 +32,20 @@ export default function UpperCardArea({handleEvent, weather, error, loading} : U
      }
     return(
         <StyledCard>
-            <FlexDiv>
-            <IconButton iconColor={weather?.iconColor} title={weather?.day} subtitle={weather?.type} handleEvent={handleEvent} iconUrl={weather?.weatherIcon}></IconButton>
-            </FlexDiv>
-            <FlexDiv>
-            <TypographyHeader>{loading || error ? "": `${weather?.temperature}°c`}</TypographyHeader>
-            </FlexDiv>
-            <FlexDiv>
-            {loading || error ? "" : <DetailsCard firstContent={weather?.windSpeed} secondContent={weather?.precipitation} thirdContent={weather?.pressure}></DetailsCard>}
-            </FlexDiv>
+        {loading 
+        ?  <MutatingDots height="100" width="100" radius="10" color={WHITE} visible={loading}/> 
+        :   <>
+                <FlexDiv>
+                    <IconButton iconColor={weather?.iconColor} title={weather?.day} subtitle={weather?.type} handleEvent={handleEvent} iconUrl={weather?.weatherIcon}></IconButton>
+                </FlexDiv>
+                <FlexDiv>
+                    <TypographyHeader>{loading || error ? "": `${weather?.temperature}°c`}</TypographyHeader>
+                </FlexDiv>
+                <FlexDiv>
+                    {loading || error ? "" : <DetailsCard firstContent={weather?.windSpeed} secondContent={weather?.precipitation} thirdContent={weather?.pressure}></DetailsCard>}
+                </FlexDiv>
+            </>
+        }
         </StyledCard>
     )
 }

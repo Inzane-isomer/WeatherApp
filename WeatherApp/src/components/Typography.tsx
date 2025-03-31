@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import Skeleton from "react-loading-skeleton";
 import styled from "styled-components";
 import { PRIMARY_TEXT_COLOR } from "../enums/colors";
 
@@ -32,7 +31,7 @@ const StyledP = styled.p<{$textColor?: string; $textSize?: number; $bold?: boole
 export function TypographyHeader({textSize, textColor, children} :TypographyProps) {
     return (
         <StyledH1 $textSize={textSize} $textColor={textColor}>
-            {children || <Skeleton />}
+            {children}
         </StyledH1>
     )
 }
@@ -40,7 +39,7 @@ export function TypographyHeader({textSize, textColor, children} :TypographyProp
 export function TypographyParagraph({textSize, textColor, children} :TypographyProps) {
     return (
         <StyledP $textSize={textSize} $textColor={textColor}>
-            {children || <Skeleton/>}
+            {children}
         </StyledP>
     )
 }
