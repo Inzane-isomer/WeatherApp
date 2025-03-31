@@ -2,9 +2,9 @@ import styled from "styled-components";
 import { TypographyParagraph } from "./Typography";
 
 interface DetailsCardProps {
-    firstContent: string,
-    secondContent: string,
-    thirdContent: string,
+    firstContent?: number,
+    secondContent?: number,
+    thirdContent?: number,
 }
 
 const FlexDiv = styled.div`
@@ -19,9 +19,9 @@ export default function DetailsCard({firstContent, secondContent, thirdContent} 
     return(
         <>
         <FlexDiv>
-            <TypographyParagraph>Wind: {firstContent}</TypographyParagraph>
-            <TypographyParagraph>Precip: {secondContent}</TypographyParagraph>
-            <TypographyParagraph>Pressure: {thirdContent}</TypographyParagraph>
+            <TypographyParagraph>Wind: {firstContent} Kmph</TypographyParagraph>
+            <TypographyParagraph>Precip: {secondContent}mm</TypographyParagraph>
+            <TypographyParagraph>Pressure: {thirdContent} mb</TypographyParagraph>
             
         </FlexDiv>
         </>
