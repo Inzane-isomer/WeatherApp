@@ -1,3 +1,8 @@
+function setCorrectDate(dateShift : number) {
+    let date = new Date();
+    return date.setDate(date.getDate() + dateShift);
+}
+
 export const HISTORICAL_RES = {
     "request": {
         "type": "City",
@@ -28,7 +33,7 @@ export const HISTORICAL_RES = {
     },
     "historical": {
         "2025-03-28": {
-            "date": "2025-03-28",
+            "date": setCorrectDate(-3),
             "date_epoch": 1214870400,
             "astro": {
                 "sunrise": "05:29 AM",
@@ -78,7 +83,7 @@ export const HISTORICAL_RES = {
             "chanceofthunder": 0,
         },
         "2025-03-29": {
-            "date": "2025-03-29",
+            "date": setCorrectDate(-2),
             "date_epoch": 1214870400,
             "astro": {
                 "sunrise": "05:29 AM",
@@ -128,7 +133,7 @@ export const HISTORICAL_RES = {
                     "chanceofthunder": 0,
         },
         "2025-03-30": {
-            "date": "2025-03-30",
+            "date": setCorrectDate(-1),
             "date_epoch": 1214870400,
             "astro": {
                 "sunrise": "05:29 AM",
@@ -220,7 +225,7 @@ export const FORECAST_RES = {
     },
     "forecast": {
         "2025-04-01": {
-            "date": "2025-04-01",
+            "date": setCorrectDate(1),
             "date_epoch": 1567814400,
             "astro": {
                 "sunrise": "06:28 AM",
@@ -280,7 +285,7 @@ export const FORECAST_RES = {
             "chanceofthunder": 0,
         },
         "2025-04-02": {
-            "date": "2025-04-02",
+            "date": setCorrectDate(2),
             "date_epoch": 1567814400,
             "astro": {
                 "sunrise": "06:28 AM",
@@ -340,7 +345,7 @@ export const FORECAST_RES = {
             "chanceofthunder": 0,
         },
         "2025-04-03": {
-            "date": "2025-04-03",
+            "date": setCorrectDate(3),
             "date_epoch": 1567814400,
             "astro": {
                 "sunrise": "06:28 AM",
